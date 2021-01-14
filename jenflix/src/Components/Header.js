@@ -32,17 +32,21 @@ const SLink = styled(Link)`
     justify-content:center;
 `;
 
-const HeaderUI = ( {location:{pathname}}) => (
+export default withRouter(({ location: { pathname } }) => (
     <Header>
-        <List>
-            <Item current={pathname === "/"}><SLink to="/">Movies</SLink></Item>
-            <Item current={pathname === "/tv"}><SLink to="/tv">TV</SLink></Item>
-            <Item current={pathname === "/search"}><SLink to="/search">Search</SLink></Item>            
-        </List>
+      <List>
+        <Item current={pathname === "/"}>
+          <SLink to="/">Movies</SLink>
+        </Item>
+        <Item current={pathname === "/tv"}>
+          <SLink to="/tv">TV</SLink>
+        </Item>
+        <Item current={pathname === "/search"}>
+          <SLink to="/search">Search</SLink>
+        </Item>
+      </List>
     </Header>
-)
-
-export default withRouter(HeaderUI)
+  ));
 
 //styled Component에 props 전달가능. props에 따라서 스타일 적용 가능
 //export 하는 건 다른 컴포넌트가 안에 있는 withRouter 임
