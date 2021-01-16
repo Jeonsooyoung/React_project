@@ -26,15 +26,15 @@ export default class extends React.Component {
     if(isNaN(parsedId)){
       return push("/")// Number가 아니면 Home으로 이동
     }
+
     let result = null;
     if(isMovie){
       try{
         if(isMovie){
-          result = await moviesApi.movieDetail(parsedId)
+          ({data:result} = await moviesApi.movieDetail(parsedId))
         }else {
-          result = await tvApi.showDetail(parsedId)
+          ({data:result} = await tvApi.showDetail(parsedId))
         }
-        console.log(result)
       } catch {
         this.setState({error:"Can't find anything."})
       } finally{
@@ -46,6 +46,7 @@ export default class extends React.Component {
 
   render() {
     const { result, error, loading } = this.state;
+    console.log(result)
     return <DetailPresenter result={result} error={error} loading={loading} />;
   }
 }
