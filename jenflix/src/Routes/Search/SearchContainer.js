@@ -19,11 +19,17 @@ export default class extends React.Component {
   this.handleSubmit()  
  }
 
- handleSubmit = () => {
+ handleSubmit = (event) => {
+    event.preventDefault();
     const { searchTerm } = this.state;
     if(searchTerm !== ""){//빈 문자열이 아니라면
       this.searchByTerm();//searchByTerm 실행
     }
+  }
+  updateTerm = (event) => {
+    const {target: {value}} = event;
+    this.setState({searchTerm : value})
+
   }
 
   searchByTerm = async () => {
@@ -50,6 +56,7 @@ export default class extends React.Component {
       loading= {loading}
       error= {error}
       handleSubmit = {this.handleSubmit}
+      updateTerm = {this.updateTerm}
     />
 
     // 누군가가 폼을 제출 할때 handleSubmit을 호출 함 
