@@ -37,6 +37,7 @@ export default class extends React.Component {
     this.setState({loading:true})
 
     try {// 타이핑하거나 누군가 검색하면 결과적으로 loading true
+
       const {data:{results : movieResults}} = await moviesApi.search(searchTerm);
       const {data:{results : tvResults}} = await tvApi.search(searchTerm)
       this.setState({movieResults,tvResults})
