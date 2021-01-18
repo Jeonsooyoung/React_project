@@ -1,11 +1,19 @@
-import React from "react"
-import styled from "styled-component"
+import React from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
-    height:100vh;
-    width:100vw,
-    display:flex;
-    justify-content:center;
-`
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  font-size: 28px;
+  margin-top: 20px;
+`;
 
-export default () => <Container><span role="img" aria-label="loading">clock</span></Container>
+export default () => (
+  <Container>
+    <span role="img" aria-label="Loading">
+      ⏰
+    </span>
+  </Container>
+);

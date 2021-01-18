@@ -15,12 +15,10 @@ export default class extends React.Component {
     누군가 폼에서 text를 입력하고, 엔터를 누르면 그게 handle Submit
     handleSubmit은 searchTerm이 빈칸(공백)이 아닌 걸 체크하고 그 다음에 search 함수 실행
   */
- componentDidMount () {
-  this.handleSubmit()  
- }
+ 
 
- handleSubmit = (event) => {
-    event.preventDefault();
+ handleSubmit = (e) => {
+   e.preventDefault()
     const { searchTerm } = this.state;
     if(searchTerm !== ""){//빈 문자열이 아니라면
       this.searchByTerm();//searchByTerm 실행

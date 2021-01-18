@@ -3,32 +3,61 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Loader from "../../Components/Loader";
 import Message from "../../Components/Message";
+import Section from "../../Components/Section";
+import Poster from "../../Components/Poster";
 
 const Container = styled.div`
     padding:0 20px`;
 
 const TVPresenter = ({topRated, popular, airingToday, loading, error}) =>  loading? (<Loader/>) : (
     <Container>
-        {topRated && topRated.length > 0 &&(
-        <Section title="TopRated Shows" >
-            {topRated.map(movie => movie.title)}
+      {topRated && topRated.length > 0 && (
+        <Section title="Top Rated Shows">
+          {topRated.map(show => (
+            <Poster 
+            key={show.id} 
+            id={show.id} 
+            imgUrl={show.poster_path}
+            title={show.original_name} 
+            rating = {show.vote_average}
+            year = {show.first_air_date && show.first_air_date.substring(0,4)}
+            />
+          ))}
         </Section>
-        )}
-        {popular && popular.length > 0 &&(
-        <Section title="Popular Shows" >
-            {popular.map(movie => movie.title)}
+      )}
+      {popular && popular.length > 0 && (
+        <Section title="Popular Shows">
+          {popular.map(show => (
+            <Poster 
+            key={show.id} 
+            id={show.id} 
+            imgUrl={show.poster_path}
+            title={show.original_name} 
+            rating = {show.vote_average}
+            year = {show.first_air_date && show.first_air_date.substring(0,4)}
+            />
+          ))}
         </Section>
-        )}
-        {airingToday && airingToday.length > 0 &&(
-        <Section title="AiringToday" >
-            {airingToday.map(movie => movie.title)}
+      )}
+      {airingToday && airingToday.length > 0 && (
+        <Section title="Airing Today">
+          {airingToday.map(show => (
+            <Poster 
+            key={show.id} 
+            id={show.id} 
+            imgUrl={show.poster_path}
+            title={show.original_name} 
+            rating = {show.vote_average}
+            year = {show.first_air_date && show.first_air_date.substring(0,4)}
+            />
+          ))}
         </Section>
-        )}
-        {error && <Message color="#e74c3c" text={error} />}
+      )}
+      {error && <Message color="#e74c3c" text={error} />}
     </Container>
 )
 
-TVPresenter.PropTypes = {
+TVPresenter.propTypes = {
     topRated:PropTypes.array,
     popular:PropTypes.array,
     airingToday:PropTypes.array,
