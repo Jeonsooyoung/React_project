@@ -33,14 +33,16 @@ export default class extends React.Component {
   }
 
   render () {
-    const {topRated,popular, airingToday, loading,error} = this.state;
+    const {topRated,popular, airingToday, loading, error} = this.state;
     
-    return <TVPresenter 
+    return (
+    <TVPresenter 
       topRated = {topRated}
       popular= {popular}
       airingToday= {airingToday}
       loading= {loading}
       error= {error}
     />
+    )
   }
 }
