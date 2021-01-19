@@ -33,10 +33,10 @@ const SearchPresenter = ({movieResults, tvResults, loading, error, handleSubmit,
                     <Poster 
                     key={movie.id} 
                     id={movie.id} 
-                    imgUrl={movie.poster_path}
+                    imageUrl={movie.poster_path}
                     title={movie.original_title} 
                     rating = {movie.vote_average}
-                    year = {movie.release_date && movie.release_date.substring(0,4)}
+                    year = {movie.release_date&&movie.release_date.substring(0,4)}
                     isMovie={true}
                     />
                 )}
@@ -48,10 +48,10 @@ const SearchPresenter = ({movieResults, tvResults, loading, error, handleSubmit,
                     <Poster 
                     key={show.id} 
                     id={show.id} 
-                    imgUrl={show.poster_path}
+                    imageUrl={show.poster_path}
                     title={show.original_name} 
                     rating = {show.vote_average}
-                    year = {show.first_air_date && show.first_air_date.substring(0,4)}
+                    year = {show.first_air_date&&show.first_air_date.substring(0,4)}
                     />
                 )}
             </Section>
@@ -67,6 +67,7 @@ SearchPresenter.propTypes  = {
     movieResults:PropTypes.array,
     tvResults:PropTypes.array,
     loading:PropTypes.bool.isRequired,
+    imageUrl:PropTypes.string,
     error:PropTypes.string,
     handleSubmit:PropTypes.func.isRequired,
     searchTerm:PropTypes.string,
