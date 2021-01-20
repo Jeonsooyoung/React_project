@@ -9,8 +9,8 @@ const Container = styled.div`
 
 const Image = styled.div`
     position:relative;
-    background-image:url(${props => props.bgUrl});
     height:180px;
+    background-image:url(${props => props.bgUrl});
     background-size:cover;
     border-radius:4px;
     background-position:center center;
