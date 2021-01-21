@@ -71,16 +71,22 @@ const Overview = styled.p`
 
 `
 const DetailPresenter = ({result, loading, error }) => 
-    <>
+    loading ? (
+        <>
+            <Helmet>
+                <title>Loading| jenflix </title>
+            </Helmet>
+            <Loader />
+        </>
+        ) : (
+        <>
         <Helmet>
             <title>
                 {result.original_title ? 
                 result.original_title : 
-                result.original_name}{""} | jenflix
+                result.original_name}{" "} | jenflix
             </title>
         </Helmet>
-        {
-    loading ? (<Loader />) : (
         <Container>
             <Backdrop bgImage={`https://image.tmdb.org/t/p/original${result.backdrop_path}`}/>
             <Content>
@@ -119,9 +125,9 @@ const DetailPresenter = ({result, loading, error }) =>
                     <Overview>{result.overview}</Overview>
                 </Data>
             </Content>
-        </Container>
-        )}
-    </>
+        </Container>        
+        </>
+        )
 
 
 
