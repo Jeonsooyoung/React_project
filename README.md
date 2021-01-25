@@ -4,12 +4,15 @@
 ## Jenflix
 Learning React and ES6 by building a Movie Discovery App.
 
-## 1.설치 
-1. npm i npx -g (npx 이용하여 설치)    
+### 1.설치 
+1. npm i npx -g (npx 이용하여 설치) 
 2. npx create-react-app <Project Name>     
 * ‘npx’는 npm 5.2+ 버전의 <strong>패키지 실행 도구</strong><br>
   사용하지 않는 버전의 패키지를 컴퓨터에 저장하지 않고 사용할 수 있게 해주는 도구    
-** Create React App은 Babel이나 webpack같은 build 도구를 사용하나, 설정 없이도 동작 가능
+** Create React App은 Babel이나 webpack같은 build 도구를 사용해서, 특별한 설정 없이도 React를 동작 가능하게 하는 모듈.
+3. .env 파일 생성 (src 파일 밖에)
+- NODE_PATH=src로 설정
+4. npm install prop-types
 3. npm install react-router-dom
 4. npm install axios
 - https://github.com/axios/axios
@@ -40,6 +43,8 @@ Learning React and ES6 by building a Movie Discovery App.
 - withRouter 은 다른 컴포넌트를 감싸는 컴포넌트
 - Link : 
 2. Axios : 서버 통신 할때 사용
+3. Helmet : 웹사이트의 head 수정 
+
 
 ## 00. Error 
 1. import App from "Components/App";
@@ -53,11 +58,7 @@ https://github.com/facebook/create-react-app/blob/master/CHANGELOG.md#removed-ty
     }
   }
 
-<<<<<<< HEAD
 2. Assign arrow
  Assign arrow function to a variable before exporting as module default  import/no-anonymous-default-export
  
-=======
-
->>>>>>> a967c72a7a609a5d7c1a59922fed25dccbf247b3
 api page
