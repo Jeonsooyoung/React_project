@@ -1,12 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import styled from 'styled-components';//찾을 수 없음. any 이기때문
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Edit <code>src/App.tsx</code> and save to reload.
         </p>
         <a
           className="App-link"
